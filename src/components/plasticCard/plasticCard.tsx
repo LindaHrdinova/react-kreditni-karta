@@ -1,10 +1,10 @@
 import './style.css';
 
 interface PlasticCardProps {
-  numberSet1: number;
-  numberSet2: number;
-  numberSet3: number;
-  numberSet4: number;
+  numberSet1: string;
+  numberSet2: string;
+  numberSet3: string;
+  numberSet4: string;
 }
 
 export const PlasticCard: React.FC<PlasticCardProps> = ({
