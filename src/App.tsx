@@ -9,6 +9,15 @@ function App() {
   const [numberSet3, setNumberSet3] = useState<number>(0);
   const [numberSet4, setNumberSet4] = useState<number>(0);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, nextRef: React.RefObject<HTMLInputElement> | null) => {
+    const input = e.target;
+    const maxLength = 4;
+
+    if (input.value.length >= maxLength && nextRef) {
+      nextRef.current?.focus();
+    }
+  };
+
   return (
     <>
       <h1>Platební karta</h1>
@@ -18,7 +27,12 @@ function App() {
         numberSet3={numberSet3}
         numberSet4={numberSet4}
       />
-      <CardNumbers />
+      <CardNumbers 
+      numberSet1={numberSet1}
+      numberSet2={numberSet2}
+      numberSet3={numberSet3}
+      numberSet4={numberSet4}
+      onInputChange={handleInputChange}/>
     </>
   );
 }
