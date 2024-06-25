@@ -3,10 +3,10 @@ import './style.css';
 
 interface PlasticCardProps {
   onInputChange: (e: React.ChangeEvent<HTMLInputElement>, nextRef: React.RefObject<HTMLInputElement> | null) => void;
-  onSetNumberSet1: Dispatch<SetStateAction<string>>
-  onSetNumberSet2: Dispatch<SetStateAction<string>>;
-  onSetNumberSet3: Dispatch<SetStateAction<string>>;
-  onSetNumberSet4: Dispatch<SetStateAction<string>>;
+  onSetNumberSet1: Dispatch<SetStateAction<number>>
+  onSetNumberSet2: Dispatch<SetStateAction<number>>;
+  onSetNumberSet3: Dispatch<SetStateAction<number>>;
+  onSetNumberSet4: Dispatch<SetStateAction<number>>;
 }
 
 // omezení délky posledního inputu, část 1/2
@@ -28,6 +28,7 @@ export const CardNumbers: React.FC<PlasticCardProps> = ({onInputChange, onSetNum
     // omezení délky posledního inputu, část 2/2
     const input = e.target;
     const value = limitToMaxLength(input.value); // Použití funkce pro omezení délky
+    const valueNum = Number(value)
   
     if (value.length === 0) {
       input.value = '';
@@ -42,16 +43,16 @@ export const CardNumbers: React.FC<PlasticCardProps> = ({onInputChange, onSetNum
     // setValue
     switch (input.name) {
       case 'number1':
-        onSetNumberSet1(value);
+        onSetNumberSet1(valueNum);
         break;
       case 'number2':
-        onSetNumberSet2(value);
+        onSetNumberSet2(valueNum);
         break;
       case 'number3':
-        onSetNumberSet3(value);
+        onSetNumberSet3(valueNum);
         break;
       case 'number4':
-        onSetNumberSet4(value);
+        onSetNumberSet4(valueNum);
         break;
       default:
         break;
