@@ -1,0 +1,16 @@
+.creditCard__card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: rgb(167, 167, 167);
+  background: linear-gradient(45deg, rgba(167, 167, 167, 1) 0%, rgba(218, 218, 218, 1) 50%, rgba(167, 167, 167, 1) 100%);
+  height: 260px;
+  width: 460px;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 20px;
+}
+
+.creditCard__card--numbers {
+  font-size: 2rem;
+}
