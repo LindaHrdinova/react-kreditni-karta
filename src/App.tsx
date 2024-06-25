@@ -18,12 +18,7 @@ function App() {
         numberSet3={numberSet3}
         numberSet4={numberSet4}
       />
-      <CardNumbers
-        numberSet1={numberSet1}
-        numberSet2={numberSet2}
-        numberSet3={numberSet3}
-        numberSet4={numberSet4}
-      />
+      <CardNumbers />
     </>
   );
 }
